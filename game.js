@@ -4,9 +4,8 @@ class Jogo extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image('carta1', 'assets/carta1.png');
-        this.load.image('carta2', 'assets/carta2.png'); //tentar substituir por link e ou sprite 
-        this.load.image('carta3', 'assets/carta3.png');
+        // Carregando o atlas com imagens e dados
+        this.load.atlas('cartasAtlas', 'assets/cartas_atlas.png', 'assets/cartas_atlas.json');
     }
 
     create() {
@@ -70,8 +69,8 @@ class Jogo extends Phaser.Scene {
         const nomeCarta = this.cartas[this.indiceCartaAtual];
         console.log(`Exibindo carta: ${nomeCarta}`);
 
-        let carta = this.add.sprite(0, 0, nomeCarta).setScale(0.2);
-        
+        let carta = this.add.sprite(0, 0, 'cartasAtlas', `${nomeCarta}.png`).setScale(0.2);
+
         let retanguloTexto = this.add.graphics();
         retanguloTexto.fillStyle(0x000000, 0.5);
         retanguloTexto.fillRoundedRect(-100, -220, 200, 50, 10);
@@ -90,7 +89,6 @@ class Jogo extends Phaser.Scene {
         this.containerCarta.setInteractive();
         this.input.setDraggable(this.containerCarta);
 
-        // Remover eventos antigos antes de adicionar novos
         this.input.off("drag");
         this.input.off("dragend");
 
@@ -119,7 +117,7 @@ class Jogo extends Phaser.Scene {
         this.input.on("dragend", (pointer, gameObject) => {
             let escolha = null;
 
-            if (!this.containerCarta) return; // Evita erros se a carta já foi destruída
+            if (!this.containerCarta) return;
 
             if (gameObject.x < 300) {
                 escolha = { efeito: "lucro", valor: -10, texto: "Perda de lucro!" };
@@ -130,11 +128,10 @@ class Jogo extends Phaser.Scene {
             if (escolha) {
                 this.aplicarEfeito(escolha);
                 this.containerCarta.destroy();
-                this.containerCarta = null; // Garante que não há referência para evitar erros
+                this.containerCarta = null;
                 this.indiceCartaAtual++;
                 this.exibirCartaAtual();
             } else {
-                // Retorna a carta para a posição original se não houver escolha
                 this.tweens.add({
                     targets: this.containerCarta,
                     x: 400,
@@ -162,7 +159,6 @@ class Jogo extends Phaser.Scene {
     }
 }
 
-// Configuração do Phaser
 const config = {
     type: Phaser.AUTO,
     width: 800,
@@ -171,3 +167,4 @@ const config = {
 };
 
 const game = new Phaser.Game(config);
+
