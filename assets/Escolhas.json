@@ -1,0 +1,713 @@
+[
+    {
+      "id": 1,
+      "descricao": "A produção está atrasada. Podemos acelerar, mas a qualidade pode ser afetada.",
+      "opcoes": [
+        {
+          "texto": "Acelere! Precisamos de mais produtos.",
+          "efeitos": {"lucro": 10, "qualidade": -5, "funcionarios": -3}
+        },
+        {
+          "texto": "Não, qualidade vem primeiro.",
+          "efeitos": {"lucro": -5, "qualidade": 10, "publico": 5}
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "descricao": "Máquinas novas podem aumentar a produção, mas são caras.",
+      "opcoes": [
+        {
+          "texto": "Compre as máquinas!",
+          "efeitos": {"lucro": 15, "funcionarios": -7, "pilares": -4}
+        },
+        {
+          "texto": "Ajuste o processo manualmente.",
+          "efeitos": {"lucro": -10, "funcionarios": 5, "pilares": 5}
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "descricao": "Há um problema nos ingredientes. Devemos seguir com a produção?",
+      "opcoes": [
+        {
+          "texto": "Sim, um pequeno erro não será notado.",
+          "efeitos": {"lucro": 10, "qualidade": -8, "publico": -6}
+        },
+        {
+          "texto": "Não, refaça tudo!",
+          "efeitos": {"lucro": -15, "qualidade": 10, "publico": 8}
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "descricao": "Podemos economizar usando embalagens mais simples.",
+      "opcoes": [
+        {
+          "texto": "Ótima ideia, faça isso.",
+          "efeitos": {"lucro": 12, "publico": -5, "pilares": -4}
+        },
+        {
+          "texto": "Não, a apresentação importa.",
+          "efeitos": {"lucro": -8, "publico": 7, "pilares": 6}
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "descricao": "Um fornecedor mais barato apareceu, mas a origem dos ingredientes é duvidosa.",
+      "opcoes": [
+        {
+          "texto": "Feche o contrato!",
+          "efeitos": {"lucro": 15, "qualidade": -10, "pilares": -6}
+        },
+        {
+          "texto": "Não arriscamos nossa reputação.",
+          "efeitos": {"lucro": -10, "publico": 8, "pilares": 7}
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "descricao": "Precisamos contratar mais gente para manter a qualidade.",
+      "opcoes": [
+        {
+          "texto": "Apoiado!",
+          "efeitos": {"lucro": -10, "funcionarios": 10, "qualidade": 5}
+        },
+        {
+          "texto": "Sem novas contratações!",
+          "efeitos": {"lucro": 10, "funcionarios": -8, "qualidade": -6}
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "descricao": "Podemos cortar custos reduzindo testes de qualidade.",
+      "opcoes": [
+        {
+          "texto": "Corte os testes!",
+          "efeitos": {"lucro": 12, "qualidade": -9, "publico": -7}
+        },
+        {
+          "texto": "Não, segurança em primeiro lugar!",
+          "efeitos": {"lucro": -10, "publico": 8, "pilares": 6}
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "descricao": "Funcionários pedem bônus por desempenho.",
+      "opcoes": [
+        {
+          "texto": "Eles merecem!",
+          "efeitos": {"lucro": -8, "funcionarios": 10}
+        },
+        {
+          "texto": "Sem bônus este ano.",
+          "efeitos": {"lucro": 10, "funcionarios": -6}
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "descricao": "Podemos vender chocolates com pequenos defeitos a um preço menor.",
+      "opcoes": [
+        {
+          "texto": "Boa ideia!",
+          "efeitos": {"lucro": 10, "publico": -5}
+        },
+        {
+          "texto": "Isso pode manchar nossa marca.",
+          "efeitos": {"lucro": -8, "publico": 8, "qualidade": 4}
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "descricao": "Podemos reduzir desperdício vendendo lotes próximos do vencimento.",
+      "opcoes": [
+        {
+          "texto": "Isso ajuda o meio ambiente!",
+          "efeitos": {"lucro": 8, "pilares": 5, "publico": -4}
+        },
+        {
+          "texto": "Pode ser arriscado para a marca.",
+          "efeitos": {"lucro": -6, "publico": 7, "qualidade": 6}
+        }
+      ]
+    },
+          {
+            "id": 11,
+            "problema": "Podemos reduzir a frequência das manutenções para economizar custos.",
+            "opcoes": [
+              {
+                "descricao": "Ok, vamos cortar um pouco.",
+                "efeitos": { "lucro": 1, "seguranca": -1, "funcionarios": -1 }
+              },
+              {
+                "descricao": "Não, a segurança é prioridade.",
+                "efeitos": { "lucro": -1, "seguranca": 1, "funcionarios": 1 }
+              }
+            ]
+          },
+          {
+            "id": 12,
+            "problema": "Há uma nova tecnologia que reduz acidentes, mas custa caro.",
+            "opcoes": [
+              {
+                "descricao": "Invista nela!",
+                "efeitos": { "lucro": -1, "funcionarios": 1, "publico": 1, "pilares": 1 }
+              },
+              {
+                "descricao": "Muito caro, seguimos com o que temos.",
+                "efeitos": { "lucro": 1, "seguranca": -1, "funcionarios": -1 }
+              }
+            ]
+          },
+          {
+            "id": 13,
+            "problema": "Os funcionários querem mais treinamentos para evitar erros.",
+            "opcoes": [
+              {
+                "descricao": "Apoiado! Segurança em primeiro lugar.",
+                "efeitos": { "lucro": -1, "funcionarios": 1, "pilares": 1 }
+              },
+              {
+                "descricao": "Sem tempo para isso, continuem trabalhando.",
+                "efeitos": { "lucro": 1, "funcionarios": -1, "publico": -1 }
+              }
+            ]
+          },
+          {
+            "id": 14,
+            "problema": "Detectamos um grande desperdício de energia na fábrica.",
+            "opcoes": [
+              {
+                "descricao": "Vamos corrigir isso imediatamente.",
+                "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
+              },
+              {
+                "descricao": "Não é prioridade agora.",
+                "efeitos": { "lucro": 1, "publico": -1, "pilares": -1 }
+              }
+            ]
+          },
+          {
+            "id": 15,
+            "problema": "As máquinas antigas ainda funcionam, mas gastam mais energia.",
+            "opcoes": [
+              {
+                "descricao": "Substitua por modelos novos.",
+                "efeitos": { "lucro": -1, "eficiencia": 1, "publico": 1, "pilares": 1 }
+              },
+              {
+                "descricao": "Vamos usá-las até o fim!",
+                "efeitos": { "lucro": 1, "publico": -1, "eficiencia": -1 }
+              }
+            ]
+          },
+          {
+            "id": 16,
+            "problema": "Um novo sistema de automação pode aumentar a eficiência, mas reduzirá empregos.",
+            "opcoes": [
+              {
+                "descricao": "A tecnologia é o futuro!",
+                "efeitos": { "lucro": 1, "funcionarios": -1, "eficiencia": 1 }
+              },
+              {
+                "descricao": "Não podemos demitir nossa equipe!",
+                "efeitos": { "lucro": -1, "funcionarios": 1, "publico": 1 }
+              }
+            ]
+          },
+          {
+            "id": 17,
+            "problema": "Relatórios indicam que nosso processo de resfriamento está falhando.",
+            "opcoes": [
+              {
+                "descricao": "Corrija imediatamente!",
+                "efeitos": { "lucro": -1, "qualidade": 1, "pilares": 1 }
+              },
+              {
+                "descricao": "Isso pode esperar.",
+                "efeitos": { "lucro": 1, "qualidade": -1, "publico": -1 }
+              }
+            ]
+          },
+          {
+            "id": 18,
+            "problema": "A produção pode parar se não fizermos ajustes urgentes.",
+            "opcoes": [
+              {
+                "descricao": "Priorize os reparos!",
+                "efeitos": { "lucro": -1, "funcionarios": 1, "pilares": 1 }
+              },
+              {
+                "descricao": "Deixe rodar até onde der.",
+                "efeitos": { "lucro": 1, "funcionarios": -1, "qualidade": -1 }
+              }
+            ]
+          },
+          {
+            "id": 19,
+            "problema": "Os funcionários reclamam que a fábrica está muito quente.",
+            "opcoes": [
+              {
+                "descricao": "Invista em climatização.",
+                "efeitos": { "lucro": -1, "funcionarios": 1, "publico": 1 }
+              },
+              {
+                "descricao": "Eles que aguentem.",
+                "efeitos": { "lucro": 1, "funcionarios": -1, "publico": -1 }
+              }
+            ]
+          },
+          {
+            "id": 20,
+            "problema": "Podemos usar peças recicladas para manutenção.",
+            "opcoes": [
+              {
+                "descricao": "Ótima ideia, faça isso.",
+                "efeitos": { "pilares": 1, "publico": 1, "lucro": -1 }
+              },
+              {
+                "descricao": "Prefiro peças novas.",
+                "efeitos": { "lucro": 1, "pilares": -1, "publico": -1 }
+              }
+            ]
+          },
+       
+      {
+        "cartas": [
+          {
+            "id": 21,
+            "problema": "Podemos substituir um ingrediente por um mais sustentável, mas ele é mais caro.",
+            "opcoes": [
+              {
+                "descricao": "Apoio a mudança!",
+                "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
+              },
+              {
+                "descricao": "Ficamos com o mais barato.",
+                "efeitos": { "lucro": 1, "publico": -1, "pilares": -1 }
+              }
+            ]
+          },
+          {
+            "id": 22,
+            "problema": "Temos um projeto para reduzir o desperdício de água na produção.",
+            "opcoes": [
+              {
+                "descricao": "Implemente imediatamente!",
+                "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
+              },
+              {
+                "descricao": "Muito trabalho, seguimos como está.",
+                "efeitos": { "lucro": 1, "publico": -1, "pilares": -1 }
+              }
+            ]
+          },
+          {
+            "id": 23,
+            "problema": "Uma ONG quer parceria para um programa de reciclagem.",
+            "opcoes": [
+              {
+                "descricao": "Vamos apoiar!",
+                "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
+              },
+              {
+                "descricao": "Não temos orçamento para isso.",
+                "efeitos": { "lucro": 1, "publico": -1 }
+              }
+            ]
+          },
+          {
+            "id": 24,
+            "problema": "Podemos reduzir a emissão de carbono investindo em logística sustentável.",
+            "opcoes": [
+              {
+                "descricao": "Vale a pena a longo prazo!",
+                "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
+              },
+              {
+                "descricao": "Custo alto demais, seguimos assim.",
+                "efeitos": { "lucro": 1, "publico": -1, "pilares": -1 }
+              }
+            ]
+          },
+          {
+            "id": 25,
+            "problema": "Um novo material biodegradável para embalagens foi desenvolvido.",
+            "opcoes": [
+              {
+                "descricao": "Ótima inovação, vamos usar!",
+                "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
+              },
+              {
+                "descricao": "Muito caro, ficamos com plástico.",
+                "efeitos": { "lucro": 1, "publico": -1, "pilares": -1 }
+              }
+            ]
+          },
+          {
+            "id": 26,
+            "problema": "Os funcionários querem treinamentos sobre práticas sustentáveis.",
+            "opcoes": [
+              {
+                "descricao": "Apoio total, conhecimento é essencial.",
+                "efeitos": { "lucro": -1, "funcionarios": 1, "pilares": 1 }
+              },
+              {
+                "descricao": "Isso não é prioridade agora.",
+                "efeitos": { "lucro": 1, "funcionarios": -1, "pilares": -1 }
+              }
+            ]
+          },
+          {
+            "id": 27,
+            "problema": "Um novo fertilizante orgânico pode melhorar nossas matérias-primas.",
+            "opcoes": [
+              {
+                "descricao": "Invista nisso!",
+                "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
+              },
+              {
+                "descricao": "Não precisamos mudar nada.",
+                "efeitos": { "lucro": 1, "publico": -1, "pilares": -1 }
+              }
+            ]
+          },
+          {
+            "id": 28,
+            "problema": "Podemos reduzir o consumo de energia trocando as lâmpadas da fábrica.",
+            "opcoes": [
+              {
+                "descricao": "Faça a troca!",
+                "efeitos": { "lucro": -1, "funcionarios": 1, "publico": 1, "pilares": 1 }
+              },
+              {
+                "descricao": "Não compensa o custo agora.",
+                "efeitos": { "lucro": 1, "publico": -1 }
+              }
+            ]
+          },
+          {
+            "id": 29,
+            "problema": "Clientes querem mais transparência sobre a origem dos ingredientes.",
+            "opcoes": [
+              {
+                "descricao": "Publicaremos relatórios!",
+                "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
+              },
+              {
+                "descricao": "Não precisamos divulgar isso.",
+                "efeitos": { "lucro": 1, "publico": -1, "pilares": -1 }
+              }
+            ]
+          },
+          {
+            "id": 30,
+            "problema": "Há um prêmio para empresas que atingem metas de sustentabilidade. Podemos concorrer?",
+            "opcoes": [
+              {
+                "descricao": "Vamos nos inscrever!",
+                "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
+              },
+              {
+                "descricao": "Muito trabalho para pouca vantagem.",
+                "efeitos": { "lucro": 1, "publico": -1, "pilares": -1 }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 31,
+        "descricao": "Uma campanha com influenciadores pode atrair mais clientes, mas custa caro.",
+        "opcoes": [
+          {
+            "texto": "Invista, precisamos de alcance!",
+            "efeitos": {"lucro": -10, "publico": 10, "pilares": 5}
+          },
+          {
+            "texto": "Muito caro, melhor estratégias mais baratas.",
+            "efeitos": {"lucro": 8, "publico": -6}
+          }
+        ]
+      },
+      {
+        "id": 32,
+        "descricao": "Podemos reformular nosso slogan para destacar nossos valores sustentáveis.",
+        "opcoes": [
+          {
+            "texto": "Ótima ideia, vamos modernizar!",
+            "efeitos": {"lucro": -8, "publico": 7, "pilares": 6}
+          },
+          {
+            "texto": "O atual já funciona bem.",
+            "efeitos": {"lucro": 6, "publico": -4}
+          }
+        ]
+      },
+      {
+        "id": 33,
+        "descricao": "Uma matéria criticou nossa pegada ambiental. Como responder?",
+        "opcoes": [
+          {
+            "texto": "Transparência total, vamos divulgar nossas ações.",
+            "efeitos": {"lucro": -10, "publico": 8, "pilares": 7}
+          },
+          {
+            "texto": "Ignora, isso passa.",
+            "efeitos": {"lucro": 7, "publico": -5}
+          }
+        ]
+      },
+      {
+        "id": 34,
+        "descricao": "Temos orçamento para uma campanha focada no público jovem.",
+        "opcoes": [
+          {
+            "texto": "Apoio! Eles são o futuro da marca.",
+            "efeitos": {"lucro": -8, "publico": 9}
+          },
+          {
+            "texto": "Nosso público atual já é fiel.",
+            "efeitos": {"lucro": 7, "publico": -6}
+          }
+        ]
+      },
+      {
+        "id": 35,
+        "descricao": "Um concorrente lançou um produto parecido com o nosso.",
+        "opcoes": [
+          {
+            "texto": "Vamos reforçar nosso diferencial!",
+            "efeitos": {"lucro": -9, "publico": 7, "pilares": 5}
+          },
+          {
+            "texto": "Sem mudanças, confiamos na qualidade.",
+            "efeitos": {"lucro": 6, "publico": -5}
+          }
+        ]
+      },
+      {
+        "id": 36,
+        "descricao": "Podemos criar embalagens personalizadas para ocasiões especiais.",
+        "opcoes": [
+          {
+            "texto": "Ótimo para vendas sazonais!",
+            "efeitos": {"lucro": -7, "publico": 8}
+          },
+          {
+            "texto": "Complicado e caro.",
+            "efeitos": {"lucro": 6, "publico": -5}
+          }
+        ]
+      },
+      {
+        "id": 37,
+        "descricao": "Estamos perdendo relevância nas redes sociais, devemos investir mais?",
+        "opcoes": [
+          {
+            "texto": "Sim, redes sociais são essenciais.",
+            "efeitos": {"lucro": -8, "publico": 9}
+          },
+          {
+            "texto": "Não, é desperdício de dinheiro.",
+            "efeitos": {"lucro": 7, "publico": -6}
+          }
+        ]
+      },
+      {
+        "id": 38,
+        "descricao": "Criar uma linha limitada pode gerar exclusividade e hype.",
+        "opcoes": [
+          {
+            "texto": "Ótima estratégia, faça isso!",
+            "efeitos": {"lucro": -10, "publico": 10, "pilares": 6}
+          },
+          {
+            "texto": "Não vale a pena o esforço.",
+            "efeitos": {"lucro": 8, "publico": -5}
+          }
+        ]
+      },
+      {
+        "id": 39,
+        "descricao": "Devemos patrocinar um evento global para ganhar visibilidade?",
+        "opcoes": [
+          {
+            "texto": "Sim, isso nos coloca no radar do mundo!",
+            "efeitos": {"lucro": -12, "publico": 12, "pilares": 7}
+          },
+          {
+            "texto": "Muito caro para um retorno incerto.",
+            "efeitos": {"lucro": 9, "publico": -7}
+          }
+        ]
+      },
+      {
+        "id": 40,
+        "descricao": "Um grupo de consumidores quer mais diversidade nos anúncios.",
+        "opcoes": [
+          {
+            "texto": "Vamos incluir mais representatividade!",
+            "efeitos": {"lucro": -8, "publico": 9, "pilares": 6}
+          },
+          {
+            "texto": "Nosso marketing já funciona bem assim.",
+            "efeitos": {"lucro": 6, "publico": -5}
+          }
+        ]
+      },
+      {
+        "id": 41,
+        "descricao": "Os preços dos chocolates subiram. Ainda vale a pena comprar?",
+        "opcoes": [
+          {
+            "texto": "Sim! Usamos ingredientes de alta qualidade e seguimos inovando.",
+            "efeitos": {"lucro": 5, "pilares": 3}
+          },
+          {
+            "texto": "Valorizamos nossos clientes e buscamos sempre o melhor custo-benefício.",
+            "efeitos": {"publico": 5, "lucro": -3}
+          }
+        ]
+      },
+      {
+        "id": 42,
+        "descricao": "Vi um novo chocolate no exterior, quando chega aqui?",
+        "opcoes": [
+          {
+            "texto": "Temos novidades chegando em breve, fique de olho!",
+            "efeitos": {"publico": 6, "lucro": -4}
+          },
+          {
+            "texto": "Estamos estudando o melhor momento para trazer esse lançamento.",
+            "efeitos": {"lucro": 4, "pilares": 2}
+          }
+        ]
+      },
+      {
+        "id": 43,
+        "descricao": "Os ingredientes são sustentáveis? Quero consumir com consciência.",
+        "opcoes": [
+          {
+            "texto": "Sim! Nossa produção respeita o meio ambiente e as comunidades envolvidas.",
+            "efeitos": {"publico": 7, "pilares": 5}
+          },
+          {
+            "texto": "Estamos sempre buscando formas de tornar nossos produtos ainda mais sustentáveis.",
+            "efeitos": {"lucro": 3, "pilares": 4}
+          }
+        ]
+      },
+      {
+        "id": 44,
+        "descricao": "A embalagem poderia ser reciclável, vocês pensaram nisso?",
+        "opcoes": [
+          {
+            "texto": "Já investimos nisso! Queremos reduzir nosso impacto ambiental.",
+            "efeitos": {"publico": 6, "pilares": 5, "lucro": -4}
+          },
+          {
+            "texto": "Trabalhamos para equilibrar inovação e sustentabilidade em nossos produtos.",
+            "efeitos": {"lucro": 4, "pilares": 3}
+          }
+        ]
+      },
+      {
+        "id": 45,
+        "descricao": "As lojas sempre ficam sem meu chocolate favorito!",
+        "opcoes": [
+          {
+            "texto": "Isso mostra o quanto nossos produtos são amados! Vamos reforçar a produção.",
+            "efeitos": {"publico": 6, "lucro": -5, "funcionarios": 4}
+          },
+          {
+            "texto": "A alta demanda é um bom sinal! Vamos buscar otimizar nosso estoque.",
+            "efeitos": {"lucro": 5, "publico": 3}
+          }
+        ]
+      },
+      {
+        "id": 46,
+        "descricao": "Vocês vão lançar opções sem açúcar? Quero algo mais saudável.",
+        "opcoes": [
+          {
+            "texto": "Sim! Estamos desenvolvendo novas opções deliciosas e equilibradas.",
+            "efeitos": {"publico": 7, "pilares": 4, "lucro": -4}
+          },
+          {
+            "texto": "Nosso foco é oferecer variedade, sempre mantendo o sabor que você ama!",
+            "efeitos": {"lucro": 4, "pilares": 3}
+          }
+        ]
+      },
+      {
+        "id": 47,
+        "descricao": "O atendimento ao cliente poderia ser mais rápido.",
+        "opcoes": [
+          {
+            "texto": "Estamos investindo para tornar sua experiência ainda melhor!",
+            "efeitos": {"publico": 6, "funcionarios": 4, "lucro": -4}
+          },
+          {
+            "texto": "Valorizamos cada cliente e trabalhamos para sempre oferecer um bom serviço.",
+            "efeitos": {"lucro": 5, "funcionarios": 3}
+          }
+        ]
+      },
+      {
+        "id": 48,
+        "descricao": "Por que não criam uma linha especial para veganos?",
+        "opcoes": [
+          {
+            "texto": "Estamos testando novas fórmulas para atender a mais pessoas!",
+            "efeitos": {"publico": 7, "pilares": 4, "lucro": -4}
+          },
+          {
+            "texto": "Temos opções diversas, mas sempre ouvimos nossos clientes para evoluir!",
+            "efeitos": {"lucro": 5, "publico": 3}
+          }
+        ]
+      },
+      {
+        "id": 49,
+        "descricao": "Os brindes nas promoções são incríveis! Teremos mais?",
+        "opcoes": [
+          {
+            "texto": "Adoramos criar momentos especiais! Fique de olho nas próximas ações.",
+            "efeitos": {"publico": 6, "lucro": -4}
+          },
+          {
+            "texto": "Trabalhamos para trazer promoções estratégicas e experiências únicas!",
+            "efeitos": {"lucro": 5, "publico": 3}
+          }
+        ]
+      },
+      {
+        "id": 50,
+        "descricao": "Poderiam apoiar mais causas sociais, eu compraria mais.",
+        "opcoes": [
+          {
+            "texto": "Apoiar a comunidade faz parte do nosso compromisso!",
+            "efeitos": {"publico": 7, "pilares": 4, "lucro": -4}
+          },
+          {
+            "texto": "Estamos sempre buscando formas de causar um impacto positivo!",
+            "efeitos": {"lucro": 5, "pilares": 3}
+          }
+        ]
+      }
+    ]
+    
+
+      
+      
+  
+  

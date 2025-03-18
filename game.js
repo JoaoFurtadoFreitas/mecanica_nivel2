@@ -9,10 +9,10 @@ class Jogo extends Phaser.Scene {
 
     create() {
         this.parametros = {
-            lucro: 50,
-            funcionarios: 50,
-            publico: 50,
-            pilaresMars: 50
+            lucro: 40,
+            funcionarios: 40,
+            publico: 40,
+            pilaresMars: 40,
         };
 
         this.criarBarrasStatus();
@@ -33,7 +33,7 @@ class Jogo extends Phaser.Scene {
 
         nomes.forEach((nome, index) => {
             let x = 150 + index * 150;
-            let yBase = 50;
+            let yBase = 90;
 
             this.add.rectangle(x, yBase, 30, 100, 0x444444).setOrigin(0.5, 1);
 
@@ -86,7 +86,7 @@ class Jogo extends Phaser.Scene {
         }).setOrigin(0.5, 0.5);
         textoEscolha.setVisible(false);
 
-        this.containerCarta = this.add.container(400, 300, [carta, retanguloTexto, textoEscolha]);
+        this.containerCarta = this.add.container(400, 350, [carta, retanguloTexto, textoEscolha]);
         this.containerCarta.setSize(240, 360);
         this.containerCarta.setInteractive();
         this.input.setDraggable(this.containerCarta);
@@ -137,7 +137,7 @@ class Jogo extends Phaser.Scene {
                 this.tweens.add({
                     targets: this.containerCarta,
                     x: 400,
-                    y: 300,
+                    y: 350,
                     rotation: 0,
                     duration: 200,
                     ease: "Power2",
