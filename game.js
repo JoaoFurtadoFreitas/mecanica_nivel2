@@ -4,7 +4,6 @@ class Jogo extends Phaser.Scene {
     }
 
     preload() {
-        // Carregando o atlas com imagens e dados
         this.load.atlas('cartasAtlas', 'assets/cartas_atlas.png', 'assets/cartas_atlas.json');
     }
 
@@ -18,7 +17,10 @@ class Jogo extends Phaser.Scene {
 
         this.criarBarrasStatus();
 
-        this.cartas = ['carta1', 'carta2', 'carta3'];
+        // Gera uma lista de 50 cartas dinamicamente
+        this.cartas = Array.from({ length: 50 }, (_, i) => i + 1);
+        Phaser.Utils.Array.Shuffle(this.cartas); // Embaralha as cartas
+
         this.indiceCartaAtual = 0;
 
         this.exibirCartaAtual();
@@ -69,7 +71,7 @@ class Jogo extends Phaser.Scene {
         const nomeCarta = this.cartas[this.indiceCartaAtual];
         console.log(`Exibindo carta: ${nomeCarta}`);
 
-        let carta = this.add.sprite(0, 0, 'cartasAtlas', `${nomeCarta}.png`).setScale(0.2);
+        let carta = this.add.sprite(0, 0, 'cartasAtlas', nomeCarta).setScale(0.6);
 
         let retanguloTexto = this.add.graphics();
         retanguloTexto.fillStyle(0x000000, 0.5);
@@ -167,4 +169,3 @@ const config = {
 };
 
 const game = new Phaser.Game(config);
-
