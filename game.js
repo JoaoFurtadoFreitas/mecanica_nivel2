@@ -5,6 +5,7 @@ class Jogo extends Phaser.Scene {
 
     preload() {
         this.load.atlas('cartasAtlas', 'assets/cartas_atlas.png', 'assets/cartas_atlas.json');
+        this.load.json('cartasData', 'assets/Escolhas.json')
     }
 
     create() {
@@ -12,23 +13,29 @@ class Jogo extends Phaser.Scene {
             lucro: 40,
             funcionarios: 40,
             publico: 40,
-            pilaresMars: 40,
+            pilares: 40,
         };
 
         this.criarBarrasStatus();
 
         // Gera uma lista de 50 cartas dinamicamente
         this.cartas = Array.from({ length: 50 }, (_, i) => i + 1);
-        Phaser.Utils.Array.Shuffle(this.cartas); // Embaralha as cartas
-
+       
         this.indiceCartaAtual = 0;
 
+        this.cartasData = this.cache.json.get('cartasData');
+
+        // Embaralha as cartas do JSON
+        this.cartas = Phaser.Utils.Array.Shuffle(this.cartasData);
+        
+
         this.exibirCartaAtual();
+
     }
 
     criarBarrasStatus() {
         this.barras = {};
-        const nomes = ["lucro", "funcionarios", "publico", "pilaresMars"];
+        const nomes = ["lucro", "funcionarios", "publico", "pilares"];
         const cores = [0x00ff00, 0xffcc00, 0x00aaff, 0xff3333];
 
         nomes.forEach((nome, index) => {
@@ -67,17 +74,17 @@ class Jogo extends Phaser.Scene {
             console.log("Fim das cartas!");
             return;
         }
-
-        const nomeCarta = this.cartas[this.indiceCartaAtual];
-        console.log(`Exibindo carta: ${nomeCarta}`);
-
-        let carta = this.add.sprite(0, 0, 'cartasAtlas', nomeCarta).setScale(0.6);
-
+    
+        const cartaAtual = this.cartas[this.indiceCartaAtual];
+        console.log(`Exibindo carta: ${cartaAtual.descricao}`);
+    
+        let carta = this.add.sprite(0, 0, 'cartasAtlas', cartaAtual.id).setScale(0.6);
+    
         let retanguloTexto = this.add.graphics();
         retanguloTexto.fillStyle(0x000000, 0.5);
         retanguloTexto.fillRoundedRect(-100, -220, 200, 50, 10);
         retanguloTexto.setVisible(false);
-
+    
         let textoEscolha = this.add.text(0, -195, '', {
             fontSize: "18px",
             color: "#ffffff",
@@ -85,29 +92,29 @@ class Jogo extends Phaser.Scene {
             align: "center"
         }).setOrigin(0.5, 0.5);
         textoEscolha.setVisible(false);
-
+    
         this.containerCarta = this.add.container(400, 350, [carta, retanguloTexto, textoEscolha]);
         this.containerCarta.setSize(240, 360);
         this.containerCarta.setInteractive();
         this.input.setDraggable(this.containerCarta);
-
+    
         this.input.off("drag");
         this.input.off("dragend");
-
+    
         this.input.on("drag", (pointer, gameObject, dragX, dragY) => {
             if (!this.containerCarta) return;
-
+    
             let deslocamentoX = dragX - 400;
             gameObject.x = dragX;
             gameObject.y = dragY;
             gameObject.rotation = Phaser.Math.Clamp(deslocamentoX * 0.002, -0.3, 0.3);
-
+    
             if (dragX < 300) {
-                textoEscolha.setText("Escolha: Esquerda");
+                textoEscolha.setText(`Escolha: ${cartaAtual.opcoes[0].texto}`);
                 retanguloTexto.setVisible(true);
                 textoEscolha.setVisible(true);
             } else if (dragX > 500) {
-                textoEscolha.setText("Escolha: Direita");
+                textoEscolha.setText(`Escolha: ${cartaAtual.opcoes[1].texto}`);
                 retanguloTexto.setVisible(true);
                 textoEscolha.setVisible(true);
             } else {
@@ -115,20 +122,20 @@ class Jogo extends Phaser.Scene {
                 textoEscolha.setVisible(false);
             }
         });
-
+    
         this.input.on("dragend", (pointer, gameObject) => {
             let escolha = null;
-
+    
             if (!this.containerCarta) return;
-
+    
             if (gameObject.x < 300) {
-                escolha = { efeito: "lucro", valor: -10, texto: "Perda de lucro!" };
+                escolha = cartaAtual.opcoes[0];
             } else if (gameObject.x > 500) {
-                escolha = { efeito: "funcionarios", valor: 10, texto: "Aumento de funcionários!" };
+                escolha = cartaAtual.opcoes[1];
             }
-
+    
             if (escolha) {
-                this.aplicarEfeito(escolha);
+                this.aplicarEfeitosCarta(escolha.efeitos);
                 this.containerCarta.destroy();
                 this.containerCarta = null;
                 this.indiceCartaAtual++;
@@ -151,14 +158,22 @@ class Jogo extends Phaser.Scene {
             }
         });
     }
+    
 
-    aplicarEfeito(escolha) {
-        if (escolha) {
-            this.parametros[escolha.efeito] += escolha.valor;
-            this.atualizarBarrasStatus();
-            console.log(`Efeito: ${escolha.efeito} mudou para ${this.parametros[escolha.efeito]}`);
+    aplicarEfeitosCarta(efeitos) {
+        const multiplicador = 5; // Aumenta o impacto em 50%
+    
+        for (const [parametro, valor] of Object.entries(efeitos)) {
+            if (this.parametros[parametro] !== undefined) {
+                this.parametros[parametro] += Math.round(valor * multiplicador);
+            }
         }
+    
+        this.atualizarBarrasStatus();
+    
+        console.log("Efeitos aplicados:", efeitos);
     }
+    
 }
 
 const config = {

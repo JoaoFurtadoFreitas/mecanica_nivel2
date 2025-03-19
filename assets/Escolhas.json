@@ -5,11 +5,11 @@
       "opcoes": [
         {
           "texto": "Acelere! Precisamos de mais produtos.",
-          "efeitos": {"lucro": 10, "qualidade": -5, "funcionarios": -3}
+          "efeitos": {"lucro": 10, "funcionarios": -3}
         },
         {
           "texto": "Não, qualidade vem primeiro.",
-          "efeitos": {"lucro": -5, "qualidade": 10, "publico": 5}
+          "efeitos": {"lucro": -5, "publico": 5}
         }
       ]
     },
@@ -33,11 +33,11 @@
       "opcoes": [
         {
           "texto": "Sim, um pequeno erro não será notado.",
-          "efeitos": {"lucro": 10, "qualidade": -8, "publico": -6}
+          "efeitos": {"lucro": 10, "publico": -6}
         },
         {
           "texto": "Não, refaça tudo!",
-          "efeitos": {"lucro": -15, "qualidade": 10, "publico": 8}
+          "efeitos": {"lucro": -15,"publico": 8}
         }
       ]
     },
@@ -61,7 +61,7 @@
       "opcoes": [
         {
           "texto": "Feche o contrato!",
-          "efeitos": {"lucro": 15, "qualidade": -10, "pilares": -6}
+          "efeitos": {"lucro": 15, "pilares": -6}
         },
         {
           "texto": "Não arriscamos nossa reputação.",
@@ -89,7 +89,7 @@
       "opcoes": [
         {
           "texto": "Corte os testes!",
-          "efeitos": {"lucro": 12, "qualidade": -9, "publico": -7}
+          "efeitos": {"lucro": 12,"publico": -7}
         },
         {
           "texto": "Não, segurança em primeiro lugar!",
@@ -121,7 +121,7 @@
         },
         {
           "texto": "Isso pode manchar nossa marca.",
-          "efeitos": {"lucro": -8, "publico": 8, "qualidade": 4}
+          "efeitos": {"lucro": -8, "publico": 8}
         }
       ]
     },
@@ -135,21 +135,21 @@
         },
         {
           "texto": "Pode ser arriscado para a marca.",
-          "efeitos": {"lucro": -6, "publico": 7, "qualidade": 6}
+          "efeitos": {"lucro": -6, "publico": 7}
         }
       ]
     },
-          {
+      {
             "id": 11,
             "problema": "Podemos reduzir a frequência das manutenções para economizar custos.",
             "opcoes": [
               {
                 "descricao": "Ok, vamos cortar um pouco.",
-                "efeitos": { "lucro": 1, "seguranca": -1, "funcionarios": -1 }
+                "efeitos": { "lucro": 1,"funcionarios": -1 }
               },
               {
                 "descricao": "Não, a segurança é prioridade.",
-                "efeitos": { "lucro": -1, "seguranca": 1, "funcionarios": 1 }
+                "efeitos": { "lucro": -1, "funcionarios": 1 }
               }
             ]
           },
@@ -163,7 +163,7 @@
               },
               {
                 "descricao": "Muito caro, seguimos com o que temos.",
-                "efeitos": { "lucro": 1, "seguranca": -1, "funcionarios": -1 }
+                "efeitos": { "lucro": 1, "funcionarios": -1 }
               }
             ]
           },
@@ -201,11 +201,11 @@
             "opcoes": [
               {
                 "descricao": "Substitua por modelos novos.",
-                "efeitos": { "lucro": -1, "eficiencia": 1, "publico": 1, "pilares": 1 }
+                "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
               },
               {
                 "descricao": "Vamos usá-las até o fim!",
-                "efeitos": { "lucro": 1, "publico": -1, "eficiencia": -1 }
+                "efeitos": { "lucro": 1, "publico": -1}
               }
             ]
           },
@@ -215,7 +215,7 @@
             "opcoes": [
               {
                 "descricao": "A tecnologia é o futuro!",
-                "efeitos": { "lucro": 1, "funcionarios": -1, "eficiencia": 1 }
+                "efeitos": { "lucro": 1, "funcionarios": -1}
               },
               {
                 "descricao": "Não podemos demitir nossa equipe!",
@@ -229,11 +229,11 @@
             "opcoes": [
               {
                 "descricao": "Corrija imediatamente!",
-                "efeitos": { "lucro": -1, "qualidade": 1, "pilares": 1 }
+                "efeitos": { "lucro": -1, "pilares": 1 }
               },
               {
                 "descricao": "Isso pode esperar.",
-                "efeitos": { "lucro": 1, "qualidade": -1, "publico": -1 }
+                "efeitos": { "lucro": 1, "publico": -1 }
               }
             ]
           },
@@ -247,7 +247,7 @@
               },
               {
                 "descricao": "Deixe rodar até onde der.",
-                "efeitos": { "lucro": 1, "funcionarios": -1, "qualidade": -1 }
+                "efeitos": { "lucro": 1, "funcionarios": -1}
               }
             ]
           },
