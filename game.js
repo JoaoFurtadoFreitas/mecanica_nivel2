@@ -18,12 +18,19 @@ class Jogo extends Phaser.Scene {
 
         this.criarBarrasStatus();
 
+        console.log("Carregando cartas do JSON...");
+        this.cartasData = this.cache.json.get('cartasData');
+        this.cartasData = this.cartasData.cartas;
+        
+      
+        console.log("Cartas carregadas:", this.cartasData);
+
         // Gera uma lista de 50 cartas dinamicamente
         this.cartas = Array.from({ length: 50 }, (_, i) => i + 1);
        
         this.indiceCartaAtual = 0;
 
-        this.cartasData = this.cache.json.get('cartasData');
+        
 
         // Embaralha as cartas do JSON
         this.cartas = Phaser.Utils.Array.Shuffle(this.cartasData);
@@ -77,8 +84,13 @@ class Jogo extends Phaser.Scene {
     
         const cartaAtual = this.cartas[this.indiceCartaAtual];
         console.log(`Exibindo carta: ${cartaAtual.descricao}`);
+
+
+        console.log(` Exibindo carta ${this.indiceCartaAtual + 1}:`, cartaAtual);
+
     
         let carta = this.add.sprite(0, 0, 'cartasAtlas', cartaAtual.id).setScale(0.6);
+
     
         let retanguloTexto = this.add.graphics();
         retanguloTexto.fillStyle(0x000000, 0.5);

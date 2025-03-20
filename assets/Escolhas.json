@@ -1,4 +1,5 @@
-[
+{
+  "cartas": [
     {
       "id": 1,
       "descricao": "A produção está atrasada. Podemos acelerar, mas a qualidade pode ser afetada.",
@@ -138,292 +139,288 @@
           "efeitos": {"lucro": -6, "publico": 7}
         }
       ]
-    },
-      {
+     },
+     {
             "id": 11,
-            "problema": "Podemos reduzir a frequência das manutenções para economizar custos.",
+            "descricao": "Podemos reduzir a frequência das manutenções para economizar custos.",
             "opcoes": [
               {
-                "descricao": "Ok, vamos cortar um pouco.",
+                "texto": "Ok, vamos cortar um pouco.",
                 "efeitos": { "lucro": 1,"funcionarios": -1 }
               },
               {
-                "descricao": "Não, a segurança é prioridade.",
+                "texto": "Não, a segurança é prioridade.",
                 "efeitos": { "lucro": -1, "funcionarios": 1 }
               }
             ]
           },
           {
             "id": 12,
-            "problema": "Há uma nova tecnologia que reduz acidentes, mas custa caro.",
+            "descricao": "Há uma nova tecnologia que reduz acidentes, mas custa caro.",
             "opcoes": [
               {
-                "descricao": "Invista nela!",
+                "texto": "Invista nela!",
                 "efeitos": { "lucro": -1, "funcionarios": 1, "publico": 1, "pilares": 1 }
               },
               {
-                "descricao": "Muito caro, seguimos com o que temos.",
+                "texto": "Muito caro, seguimos com o que temos.",
                 "efeitos": { "lucro": 1, "funcionarios": -1 }
               }
             ]
           },
           {
             "id": 13,
-            "problema": "Os funcionários querem mais treinamentos para evitar erros.",
+            "descricao": "Os funcionários querem mais treinamentos para evitar erros.",
             "opcoes": [
               {
-                "descricao": "Apoiado! Segurança em primeiro lugar.",
+                "texto": "Apoiado! Segurança em primeiro lugar.",
                 "efeitos": { "lucro": -1, "funcionarios": 1, "pilares": 1 }
               },
               {
-                "descricao": "Sem tempo para isso, continuem trabalhando.",
+                "texto": "Sem tempo para isso, continuem trabalhando.",
                 "efeitos": { "lucro": 1, "funcionarios": -1, "publico": -1 }
               }
             ]
           },
           {
             "id": 14,
-            "problema": "Detectamos um grande desperdício de energia na fábrica.",
+            "descricao": "Detectamos um grande desperdício de energia na fábrica.",
             "opcoes": [
               {
-                "descricao": "Vamos corrigir isso imediatamente.",
+                "texto": "Vamos corrigir isso imediatamente.",
                 "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
               },
               {
-                "descricao": "Não é prioridade agora.",
+                "texto": "Não é prioridade agora.",
                 "efeitos": { "lucro": 1, "publico": -1, "pilares": -1 }
               }
             ]
           },
           {
             "id": 15,
-            "problema": "As máquinas antigas ainda funcionam, mas gastam mais energia.",
+            "descricao": "As máquinas antigas ainda funcionam, mas gastam mais energia.",
             "opcoes": [
               {
-                "descricao": "Substitua por modelos novos.",
+                "texto": "Substitua por modelos novos.",
                 "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
               },
               {
-                "descricao": "Vamos usá-las até o fim!",
+                "texto": "Vamos usá-las até o fim!",
                 "efeitos": { "lucro": 1, "publico": -1}
               }
             ]
           },
           {
             "id": 16,
-            "problema": "Um novo sistema de automação pode aumentar a eficiência, mas reduzirá empregos.",
+            "descricao": "Um novo sistema de automação pode aumentar a eficiência, mas reduzirá empregos.",
             "opcoes": [
               {
-                "descricao": "A tecnologia é o futuro!",
+                "texto": "A tecnologia é o futuro!",
                 "efeitos": { "lucro": 1, "funcionarios": -1}
               },
               {
-                "descricao": "Não podemos demitir nossa equipe!",
+                "texto": "Não podemos demitir nossa equipe!",
                 "efeitos": { "lucro": -1, "funcionarios": 1, "publico": 1 }
               }
             ]
           },
           {
             "id": 17,
-            "problema": "Relatórios indicam que nosso processo de resfriamento está falhando.",
+            "descricao": "Relatórios indicam que nosso processo de resfriamento está falhando.",
             "opcoes": [
               {
-                "descricao": "Corrija imediatamente!",
+                "texto": "Corrija imediatamente!",
                 "efeitos": { "lucro": -1, "pilares": 1 }
               },
               {
-                "descricao": "Isso pode esperar.",
+                "texto": "Isso pode esperar.",
                 "efeitos": { "lucro": 1, "publico": -1 }
               }
             ]
           },
           {
             "id": 18,
-            "problema": "A produção pode parar se não fizermos ajustes urgentes.",
+            "descricao": "A produção pode parar se não fizermos ajustes urgentes.",
             "opcoes": [
               {
-                "descricao": "Priorize os reparos!",
+                "texto": "Priorize os reparos!",
                 "efeitos": { "lucro": -1, "funcionarios": 1, "pilares": 1 }
               },
               {
-                "descricao": "Deixe rodar até onde der.",
+                "texto": "Deixe rodar até onde der.",
                 "efeitos": { "lucro": 1, "funcionarios": -1}
               }
             ]
           },
           {
             "id": 19,
-            "problema": "Os funcionários reclamam que a fábrica está muito quente.",
+            "descricao": "Os funcionários reclamam que a fábrica está muito quente.",
             "opcoes": [
               {
-                "descricao": "Invista em climatização.",
+                "texto": "Invista em climatização.",
                 "efeitos": { "lucro": -1, "funcionarios": 1, "publico": 1 }
               },
               {
-                "descricao": "Eles que aguentem.",
+                "texto": "Eles que aguentem.",
                 "efeitos": { "lucro": 1, "funcionarios": -1, "publico": -1 }
               }
             ]
           },
           {
             "id": 20,
-            "problema": "Podemos usar peças recicladas para manutenção.",
+            "descricao": "Podemos usar peças recicladas para manutenção.",
             "opcoes": [
               {
-                "descricao": "Ótima ideia, faça isso.",
+                "texto": "Ótima ideia, faça isso.",
                 "efeitos": { "pilares": 1, "publico": 1, "lucro": -1 }
               },
               {
-                "descricao": "Prefiro peças novas.",
+                "texto": "Prefiro peças novas.",
                 "efeitos": { "lucro": 1, "pilares": -1, "publico": -1 }
               }
             ]
           },
-       
-      {
-        "cartas": [
+
           {
             "id": 21,
-            "problema": "Podemos substituir um ingrediente por um mais sustentável, mas ele é mais caro.",
+            "descricao": "Podemos substituir um ingrediente por um mais sustentável, mas ele é mais caro.",
             "opcoes": [
               {
-                "descricao": "Apoio a mudança!",
+                "texto": "Apoio a mudança!",
                 "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
               },
               {
-                "descricao": "Ficamos com o mais barato.",
+                "texto": "Ficamos com o mais barato.",
                 "efeitos": { "lucro": 1, "publico": -1, "pilares": -1 }
               }
             ]
           },
           {
             "id": 22,
-            "problema": "Temos um projeto para reduzir o desperdício de água na produção.",
+            "descricao": "Temos um projeto para reduzir o desperdício de água na produção.",
             "opcoes": [
               {
-                "descricao": "Implemente imediatamente!",
+                "texto": "Implemente imediatamente!",
                 "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
               },
               {
-                "descricao": "Muito trabalho, seguimos como está.",
+                "texto": "Muito trabalho, seguimos como está.",
                 "efeitos": { "lucro": 1, "publico": -1, "pilares": -1 }
               }
             ]
           },
           {
             "id": 23,
-            "problema": "Uma ONG quer parceria para um programa de reciclagem.",
+            "descricao": "Uma ONG quer parceria para um programa de reciclagem.",
             "opcoes": [
               {
-                "descricao": "Vamos apoiar!",
+                "texto": "Vamos apoiar!",
                 "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
               },
               {
-                "descricao": "Não temos orçamento para isso.",
+                "texto": "Não temos orçamento para isso.",
                 "efeitos": { "lucro": 1, "publico": -1 }
               }
             ]
           },
           {
             "id": 24,
-            "problema": "Podemos reduzir a emissão de carbono investindo em logística sustentável.",
+            "descricao": "Podemos reduzir a emissão de carbono investindo em logística sustentável.",
             "opcoes": [
               {
-                "descricao": "Vale a pena a longo prazo!",
+                "texto": "Vale a pena a longo prazo!",
                 "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
               },
               {
-                "descricao": "Custo alto demais, seguimos assim.",
+                "texto": "Custo alto demais, seguimos assim.",
                 "efeitos": { "lucro": 1, "publico": -1, "pilares": -1 }
               }
             ]
           },
           {
             "id": 25,
-            "problema": "Um novo material biodegradável para embalagens foi desenvolvido.",
+            "descricao": "Um novo material biodegradável para embalagens foi desenvolvido.",
             "opcoes": [
               {
-                "descricao": "Ótima inovação, vamos usar!",
+                "texto": "Ótima inovação, vamos usar!",
                 "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
               },
               {
-                "descricao": "Muito caro, ficamos com plástico.",
+                "texto": "Muito caro, ficamos com plástico.",
                 "efeitos": { "lucro": 1, "publico": -1, "pilares": -1 }
               }
             ]
           },
           {
             "id": 26,
-            "problema": "Os funcionários querem treinamentos sobre práticas sustentáveis.",
+            "descricao": "Os funcionários querem treinamentos sobre práticas sustentáveis.",
             "opcoes": [
               {
-                "descricao": "Apoio total, conhecimento é essencial.",
+                "texto": "Apoio total, conhecimento é essencial.",
                 "efeitos": { "lucro": -1, "funcionarios": 1, "pilares": 1 }
               },
               {
-                "descricao": "Isso não é prioridade agora.",
+                "texto": "Isso não é prioridade agora.",
                 "efeitos": { "lucro": 1, "funcionarios": -1, "pilares": -1 }
               }
             ]
           },
           {
             "id": 27,
-            "problema": "Um novo fertilizante orgânico pode melhorar nossas matérias-primas.",
+            "descricao": "Um novo fertilizante orgânico pode melhorar nossas matérias-primas.",
             "opcoes": [
               {
-                "descricao": "Invista nisso!",
+                "texto": "Invista nisso!",
                 "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
               },
               {
-                "descricao": "Não precisamos mudar nada.",
+                "texto": "Não precisamos mudar nada.",
                 "efeitos": { "lucro": 1, "publico": -1, "pilares": -1 }
               }
             ]
           },
           {
             "id": 28,
-            "problema": "Podemos reduzir o consumo de energia trocando as lâmpadas da fábrica.",
+            "descricao": "Podemos reduzir o consumo de energia trocando as lâmpadas da fábrica.",
             "opcoes": [
               {
-                "descricao": "Faça a troca!",
+                "texto": "Faça a troca!",
                 "efeitos": { "lucro": -1, "funcionarios": 1, "publico": 1, "pilares": 1 }
               },
               {
-                "descricao": "Não compensa o custo agora.",
+                "texto": "Não compensa o custo agora.",
                 "efeitos": { "lucro": 1, "publico": -1 }
               }
             ]
           },
           {
             "id": 29,
-            "problema": "Clientes querem mais transparência sobre a origem dos ingredientes.",
+            "descricao": "Clientes querem mais transparência sobre a origem dos ingredientes.",
             "opcoes": [
               {
-                "descricao": "Publicaremos relatórios!",
+                "texto": "Publicaremos relatórios!",
                 "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
               },
               {
-                "descricao": "Não precisamos divulgar isso.",
+                "texto": "Não precisamos divulgar isso.",
                 "efeitos": { "lucro": 1, "publico": -1, "pilares": -1 }
               }
             ]
           },
           {
             "id": 30,
-            "problema": "Há um prêmio para empresas que atingem metas de sustentabilidade. Podemos concorrer?",
+            "descricao": "Há um prêmio para empresas que atingem metas de sustentabilidade. Podemos concorrer?",
             "opcoes": [
               {
-                "descricao": "Vamos nos inscrever!",
+                "texto": "Vamos nos inscrever!",
                 "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
               },
               {
-                "descricao": "Muito trabalho para pouca vantagem.",
+                "texto": "Muito trabalho para pouca vantagem.",
                 "efeitos": { "lucro": 1, "publico": -1, "pilares": -1 }
               }
             ]
-          }
-        ]
-      },
+          },
       {
         "id": 31,
         "descricao": "Uma campanha com influenciadores pode atrair mais clientes, mas custa caro.",
@@ -705,6 +702,7 @@
         ]
       }
     ]
+  }
     
 
       
