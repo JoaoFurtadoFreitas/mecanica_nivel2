@@ -91,19 +91,35 @@ class Jogo extends Phaser.Scene {
     
         let carta = this.add.sprite(0, 0, 'cartasAtlas', cartaAtual.id).setScale(0.6);
 
+        let larguraTexto = 280; // Largura máxima do texto
+        let alturaMinima = 50;  // Altura mínima do fundo
+        let padding = 10;       // Espaço extra ao redor do texto
+
     
         let retanguloTexto = this.add.graphics();
         retanguloTexto.fillStyle(0x000000, 0.5);
-        retanguloTexto.fillRoundedRect(-100, -220, 200, 50, 10);
+        retanguloTexto.fillRoundedRect(-150, -210, 300, 100, 10);
         retanguloTexto.setVisible(false);
     
-        let textoEscolha = this.add.text(0, -195, '', {
+        let textoEscolha = this.add.text(0, -180, '', {
             fontSize: "18px",
             color: "#ffffff",
             fontFamily: "Arial",
-            align: "center"
+            align: "center",
+            wordWrap: { width: larguraTexto, useAdvancedWrap: true },
         }).setOrigin(0.5, 0.5);
         textoEscolha.setVisible(false);
+
+        function ajustarRetangulo() {
+            let alturaTexto = textoEscolha.height;
+            let novaAltura = Math.max(alturaMinima, alturaTexto + 2 * padding);
+            
+            retanguloTexto.clear();
+            retanguloTexto.fillStyle(0x000000, 0.5);
+            retanguloTexto.fillRoundedRect(-larguraTexto / 2 - padding, -210, larguraTexto + 2 * padding, novaAltura, 5);
+        }
+
+
     
         this.containerCarta = this.add.container(400, 350, [carta, retanguloTexto, textoEscolha]);
         this.containerCarta.setSize(240, 360);
@@ -123,10 +139,12 @@ class Jogo extends Phaser.Scene {
     
             if (dragX < 300) {
                 textoEscolha.setText(`Escolha: ${cartaAtual.opcoes[0].texto}`);
+                ajustarRetangulo();
                 retanguloTexto.setVisible(true);
                 textoEscolha.setVisible(true);
             } else if (dragX > 500) {
                 textoEscolha.setText(`Escolha: ${cartaAtual.opcoes[1].texto}`);
+                ajustarRetangulo();
                 retanguloTexto.setVisible(true);
                 textoEscolha.setVisible(true);
             } else {
@@ -173,7 +191,7 @@ class Jogo extends Phaser.Scene {
     
 
     aplicarEfeitosCarta(efeitos) {
-        const multiplicador = 5; // Aumenta o impacto em 50%
+        const multiplicador = 5;
     
         for (const [parametro, valor] of Object.entries(efeitos)) {
             if (this.parametros[parametro] !== undefined) {
