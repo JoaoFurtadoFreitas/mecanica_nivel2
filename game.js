@@ -73,6 +73,7 @@ class Jogo extends Phaser.Scene {
                 duration: 300,
                 ease: 'Power2'
             });
+            
         });
     }
 
@@ -196,15 +197,81 @@ class Jogo extends Phaser.Scene {
         for (const [parametro, valor] of Object.entries(efeitos)) {
             if (this.parametros[parametro] !== undefined) {
                 this.parametros[parametro] += Math.round(valor * multiplicador);
+                this.parametros[parametro] = Phaser.Math.Clamp(this.parametros[parametro], 0, 100);
             }
         }
     
         this.atualizarBarrasStatus();
+
+         // Verifica se algum parâmetro atingiu 0 ou 100
+    for (const parametro in this.parametros) {
+        if (this.parametros[parametro] === 0 || this.parametros[parametro] === 100) {
+            this.exibirPopupGameOver(parametro);
+            return; // Para o jogo aqui
+        }
+    }
     
         console.log("Efeitos aplicados:", efeitos);
     }
+
+    exibirPopupGameOver(parametro) {
+        let mensagens = {
+            lucro: "Sua empresa faliu por falta de dinheiro!",
+            funcionarios: "Todos os funcionários pediram demissão!",
+            publico: "Seu público perdeu a confiança na marca!",
+            pilares: "Seus valores foram destruídos e a empresa entrou em colapso!"
+        };
+    
+        // 🔹 Desativa completamente a carta
+        if (this.containerCarta) {
+            this.containerCarta.disableInteractive(); // Remove interatividade
+            this.containerCarta.setActive(false); // Impede atualizações na carta
+            this.tweens.killTweensOf(this.containerCarta); // Cancela animações pendentes
+            this.input.off("drag"); // Remove evento de arrastar
+            this.input.off("dragend"); // Remove evento de soltar
+            this.containerCarta.setDepth(-1); // Move a carta para trás do popup
+        }
+    
+        // 🔹 Cria um fundo invisível para bloquear cliques na carta
+        let bloqueioFundo = this.add.rectangle(400, 300, 800, 600, 0x000000, 0)
+            .setInteractive()
+            .setDepth(998); // 🔹 Esse fundo impede cliques em objetos atrás dele
+    
+        let fundoPopup = this.add.rectangle(400, 300, 500, 300, 0x000000, 0.8).setDepth(999);
+        let textoGameOver = this.add.text(400, 220, "GAME OVER", {
+            fontSize: "40px",
+            color: "#ff0000",
+            fontFamily: "Arial",
+            fontStyle: "bold"
+        }).setOrigin(0.5).setDepth(999);
+    
+        let textoMensagem = this.add.text(400, 280, mensagens[parametro], {
+            fontSize: "20px",
+            color: "#ffffff",
+            fontFamily: "Arial",
+            align: "center",
+            wordWrap: { width: 400 }
+        }).setOrigin(0.5).setDepth(999);
+    
+        let botaoRestart = this.add.text(400, 360, "Tente Novamente", {
+            fontSize: "24px",
+            color: "#ffffff",
+            backgroundColor: "#ff0000",
+            fontFamily: "Arial",
+            padding: { left: 10, right: 10, top: 5, bottom: 5 }
+        }).setOrigin(0.5).setInteractive().setDepth(999);
+    
+        botaoRestart.on("pointerdown", () => {
+            this.scene.restart(); // 🔄 Reinicia o jogo
+        });
+    
+        this.popupGameOver = this.add.container(0, 0, [bloqueioFundo, fundoPopup, textoGameOver, textoMensagem, botaoRestart]).setDepth(999);
+    }
+    
+    
     
 }
+
 
 const config = {
     type: Phaser.AUTO,
