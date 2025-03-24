@@ -27,14 +27,14 @@ class Jogo extends Phaser.Scene {
         const centerX = this.cameras.main.width / 2;
     const centerY = this.cameras.main.height / 2;
 
-         // 🔹 Adiciona a imagem de fundo
+         //Adiciona a imagem de fundo
     this.add.image(centerX, centerY, 'fundo').setDisplaySize(window.innerWidth, window.innerHeight);
 
-    // 🔹 Retângulo central para os elementos do jogo
+    //Retângulo central para os elementos do jogo
     let fundoJogo = this.add.rectangle(centerX, centerY, 650, window.innerHeight, 0x222222, 0.8);
     fundoJogo.setDepth(1); // Mantém no fundo
 
-    // 🔹 Retângulo onde ficarão as barras de parâmetros
+    // Retângulo onde ficarão as barras de parâmetros
     let fundoBarras = this.add.rectangle(centerX, 63, 650, 150, 0x111111, 0.8);
     fundoBarras.setDepth(2);
 
@@ -129,9 +129,9 @@ class Jogo extends Phaser.Scene {
     
         let carta = this.add.sprite(0, 0, 'cartasAtlas', cartaAtual.id).setScale(0.6);
 
-        let larguraTexto = 280; // Largura máxima do texto
-        let alturaMinima = 50;  // Altura mínima do fundo
-        let padding = 10;       // Espaço extra ao redor do texto
+        let larguraTexto = 280; //Largura máxima do texto
+        let alturaMinima = 50;  //Altura mínima do fundo
+        let padding = 10;       //Espaço extra ao redor do texto
 
     
         let retanguloTexto = this.add.graphics();
@@ -175,7 +175,7 @@ class Jogo extends Phaser.Scene {
             const limiteSuperior = this.cameras.main.height * 0.59;
             const limiteInferior = this.cameras.main.height * 0.58;
         
-            // Mantém a carta dentro dos limites da caixa
+            //Mantém a carta dentro dos limites da caixa
             let novoX = Phaser.Math.Clamp(dragX, limiteEsquerda, limiteDireita);
             let novoY = Phaser.Math.Clamp(dragY, limiteSuperior, limiteInferior);
         
@@ -205,7 +205,7 @@ class Jogo extends Phaser.Scene {
         
         this.input.on("dragend", (pointer, gameObject) => {
             let escolha = null;
-            let limiteEscolha = 100; // Distância mínima para validar a escolha
+            let limiteEscolha = 100; //Distância mínima para validar a escolha
         
             if (!this.containerCarta) return;
         
@@ -216,7 +216,7 @@ class Jogo extends Phaser.Scene {
             }
         
             if (escolha) {
-                // 🔹 Adiciona um efeito de rotação ao soltar para confirmar a escolha
+                //Adiciona um efeito de rotação ao soltar para confirmar a escolha
                 this.aplicarEfeitosCarta(escolha.efeitos);
                 let anguloFinal = escolha === cartaAtual.opcoes[0] ? -0.1 : 0.1;
                 let destinoX = escolha === cartaAtual.opcoes[0] ? -50 : this.cameras.main.width + 50;
@@ -237,7 +237,7 @@ class Jogo extends Phaser.Scene {
                     }
                 });
             } else {
-                // 🔹 Se soltar no centro, volta suavemente para posição original
+                //Se soltar no centro, volta suavemente para posição original
                 this.tweens.add({
                     targets: this.containerCarta,
                     x: centerX,
@@ -310,7 +310,7 @@ class Jogo extends Phaser.Scene {
         let estadoFinal = valorParametro === 0 ? 0 : 100;
         let mensagemFinal = mensagens[parametro][estadoFinal];
     
-        // 🔹 Desativa completamente a carta
+        //Desativa completamente a carta
         if (this.containerCarta) {
             this.containerCarta.disableInteractive();
             this.containerCarta.setActive(false);
@@ -320,7 +320,7 @@ class Jogo extends Phaser.Scene {
             this.containerCarta.setDepth(-1);
         }
     
-        // 🔹 Cria um fundo invisível para bloquear cliques na carta
+        //Cria um fundo invisível para bloquear cliques na carta
         let bloqueioFundo = this.add.rectangle(centerX, centerY, 800, 600, 0x000000, 0)
             .setInteractive()
             .setDepth(998);
@@ -385,7 +385,7 @@ class Jogo extends Phaser.Scene {
         const centerX = this.cameras.main.width / 2;
         const centerY = this.cameras.main.height / 2;
     
-        // 🔹 Desativa a carta e impede que continue sendo arrastada
+        //Desativa a carta e impede que continue sendo arrastada
         if (this.containerCarta) {
             this.containerCarta.disableInteractive();
             this.containerCarta.setActive(false);
@@ -396,12 +396,12 @@ class Jogo extends Phaser.Scene {
             this.containerCarta.setDepth(-1);
         }
     
-        // 🔹 Cria um fundo invisível para bloquear interações na tela
+        //Cria um fundo invisível para bloquear interações na tela
         let bloqueioFundo = this.add.rectangle(centerX, centerY, 800, 600, 0x000000, 0)
             .setInteractive()
             .setDepth(998);
     
-        // 🔹 Cria o popup de vitória
+        //Cria o popup de vitória
         let popup = this.add.rectangle(centerX, centerY, 500, 300, 0x000000, 0.8).setDepth(999);
         let texto = this.add.text(centerX, centerY - 100, 'Vitória!', {
             fontSize: '32px', fill: '#fff'
@@ -421,7 +421,7 @@ class Jogo extends Phaser.Scene {
         }).setOrigin(0.5).setInteractive().setDepth(999);
         botaoContinuar.on('pointerdown', () => this.scene.start('TelaFinal'));
     
-        // 🔹 Agrupa todos os elementos em um container
+        //Agrupa todos os elementos em um container
         this.popupVitoria = this.add.container(0, 0, [bloqueioFundo, popup, texto, estrelasTexto, botaoReiniciar, botaoContinuar]).setDepth(999);
     }
     
@@ -448,7 +448,7 @@ const config = {
 
 const game = new Phaser.Game(config);
 
-// Ajustar tamanho ao redimensionar a janela
+//Ajustar tamanho ao redimensionar a janela
 window.addEventListener('resize', () => {
     game.scale.resize(window.innerWidth, window.innerHeight);
 });
