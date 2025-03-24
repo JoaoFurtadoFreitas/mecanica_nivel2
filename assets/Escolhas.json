@@ -6,11 +6,11 @@
       "opcoes": [
         {
           "texto": "Acelere! Precisamos de mais produtos.",
-          "efeitos": {"lucro": 10, "funcionarios": -3}
+          "efeitos": {"lucro": 10, "funcionarios": -6, "pilares": -9}
         },
         {
           "texto": "Não, qualidade vem primeiro.",
-          "efeitos": {"lucro": -5, "publico": 5}
+          "efeitos": {"lucro": -5, "publico": 8, "pilares": 12}
         }
       ]
     },
@@ -20,11 +20,11 @@
       "opcoes": [
         {
           "texto": "Compre as máquinas!",
-          "efeitos": {"lucro": 15, "funcionarios": -7, "pilares": -4}
+          "efeitos": {"lucro": -10, "funcionarios": 5, "pilares": -4}
         },
         {
           "texto": "Ajuste o processo manualmente.",
-          "efeitos": {"lucro": -10, "funcionarios": 5, "pilares": 5}
+          "efeitos": {"lucro": -5, "funcionarios": -7}
         }
       ]
     },
@@ -34,11 +34,11 @@
       "opcoes": [
         {
           "texto": "Sim, um pequeno erro não será notado.",
-          "efeitos": {"lucro": 10, "publico": -6}
+          "efeitos": {"lucro": 5, "publico": -2, "pilares": -4}
         },
         {
           "texto": "Não, refaça tudo!",
-          "efeitos": {"lucro": -15,"publico": 8}
+          "efeitos": {"lucro": -6,"publico": 2}
         }
       ]
     },
@@ -48,11 +48,11 @@
       "opcoes": [
         {
           "texto": "Ótima ideia, faça isso.",
-          "efeitos": {"lucro": 12, "publico": -5, "pilares": -4}
+          "efeitos": {"lucro": 5, "publico": -6, "pilares": -1}
         },
         {
           "texto": "Não, a apresentação importa.",
-          "efeitos": {"lucro": -8, "publico": 7, "pilares": 6}
+          "efeitos": {"lucro": -2, "publico": 7, "pilares": 2}
         }
       ]
     },
@@ -62,11 +62,11 @@
       "opcoes": [
         {
           "texto": "Feche o contrato!",
-          "efeitos": {"lucro": 15, "pilares": -6}
+          "efeitos": {"lucro": 7, "pilares": -6}
         },
         {
           "texto": "Não arriscamos nossa reputação.",
-          "efeitos": {"lucro": -10, "publico": 8, "pilares": 7}
+          "efeitos": {"lucro": -5, "publico": 8, "pilares": 7}
         }
       ]
     },
@@ -76,11 +76,11 @@
       "opcoes": [
         {
           "texto": "Apoiado!",
-          "efeitos": {"lucro": -10, "funcionarios": 10, "qualidade": 5}
+          "efeitos": {"lucro": -5, "funcionarios": 3, "pilares": 8}
         },
         {
           "texto": "Sem novas contratações!",
-          "efeitos": {"lucro": 10, "funcionarios": -8, "qualidade": -6}
+          "efeitos": {"funcionarios": -3, "qualidade": -6}
         }
       ]
     },
@@ -90,11 +90,11 @@
       "opcoes": [
         {
           "texto": "Corte os testes!",
-          "efeitos": {"lucro": 12,"publico": -7}
+          "efeitos": {"lucro": 6,"publico": -7}
         },
         {
           "texto": "Não, segurança em primeiro lugar!",
-          "efeitos": {"lucro": -10, "publico": 8, "pilares": 6}
+          "efeitos": {"publico": 3, "pilares": 6}
         }
       ]
     },
@@ -104,11 +104,11 @@
       "opcoes": [
         {
           "texto": "Eles merecem!",
-          "efeitos": {"lucro": -8, "funcionarios": 10}
+          "efeitos": {"lucro": -5, "funcionarios": 9}
         },
         {
           "texto": "Sem bônus este ano.",
-          "efeitos": {"lucro": 10, "funcionarios": -6}
+          "efeitos": {"lucro": 4, "funcionarios": -6}
         }
       ]
     },
@@ -118,11 +118,11 @@
       "opcoes": [
         {
           "texto": "Boa ideia!",
-          "efeitos": {"lucro": 10, "publico": -5}
+          "efeitos": {"lucro": 7, "publico": -6, "pilares":-4}
         },
         {
           "texto": "Isso pode manchar nossa marca.",
-          "efeitos": {"lucro": -8, "publico": 8}
+          "efeitos": {"publico": 7}
         }
       ]
     },
@@ -132,11 +132,11 @@
       "opcoes": [
         {
           "texto": "Isso ajuda o meio ambiente!",
-          "efeitos": {"lucro": 8, "pilares": 5, "publico": -4}
+          "efeitos": {"lucro": 7,"publico": -2, "pilares":4}
         },
         {
           "texto": "Pode ser arriscado para a marca.",
-          "efeitos": {"lucro": -6, "publico": 7}
+          "efeitos": {"lucro": -2, "publico": 7, "pilares":-4}
         }
       ]
      },
@@ -146,11 +146,11 @@
             "opcoes": [
               {
                 "texto": "Ok, vamos cortar um pouco.",
-                "efeitos": { "lucro": 1,"funcionarios": -1 }
+                "efeitos": { "lucro": 1,"funcionarios": -3 }
               },
               {
                 "texto": "Não, a segurança é prioridade.",
-                "efeitos": { "lucro": -1, "funcionarios": 1 }
+                "efeitos": { "lucro": -2, "funcionarios": 6 }
               }
             ]
           },
@@ -160,25 +160,25 @@
             "opcoes": [
               {
                 "texto": "Invista nela!",
-                "efeitos": { "lucro": -1, "funcionarios": 1, "publico": 1, "pilares": 1 }
+                "efeitos": { "lucro": -4, "funcionarios": 5, "pilares": 1 }
               },
               {
                 "texto": "Muito caro, seguimos com o que temos.",
-                "efeitos": { "lucro": 1, "funcionarios": -1 }
+                "efeitos": { "lucro": 3, "funcionarios": -2 }
               }
             ]
           },
           {
             "id": 13,
-            "descricao": "Os funcionários querem mais treinamentos para evitar erros.",
+            "descricao": "Os colaboradores querem mais treinamentos para evitar erros.",
             "opcoes": [
               {
                 "texto": "Apoiado! Segurança em primeiro lugar.",
-                "efeitos": { "lucro": -1, "funcionarios": 1, "pilares": 1 }
+                "efeitos": { "lucro": -3, "funcionarios": 7, "pilares": 1 }
               },
               {
                 "texto": "Sem tempo para isso, continuem trabalhando.",
-                "efeitos": { "lucro": 1, "funcionarios": -1, "publico": -1 }
+                "efeitos": { "lucro": 2, "funcionarios": -6, "publico": -1 }
               }
             ]
           },
@@ -188,11 +188,11 @@
             "opcoes": [
               {
                 "texto": "Vamos corrigir isso imediatamente.",
-                "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
+                "efeitos": { "lucro": -2, "publico": 1, "pilares": 5 }
               },
               {
                 "texto": "Não é prioridade agora.",
-                "efeitos": { "lucro": 1, "publico": -1, "pilares": -1 }
+                "efeitos": { "lucro": 2, "publico": -1, "pilares": -3 }
               }
             ]
           },
@@ -202,11 +202,11 @@
             "opcoes": [
               {
                 "texto": "Substitua por modelos novos.",
-                "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
+                "efeitos": { "lucro": -3, "funcionarios": -3, "pilares": 3, "publico":3 }
               },
               {
                 "texto": "Vamos usá-las até o fim!",
-                "efeitos": { "lucro": 1, "publico": -1}
+                "efeitos": {"publico": -3, "funcionarios":3}
               }
             ]
           },
@@ -216,11 +216,11 @@
             "opcoes": [
               {
                 "texto": "A tecnologia é o futuro!",
-                "efeitos": { "lucro": 1, "funcionarios": -1}
+                "efeitos": { "lucro": 5, "funcionarios": -5, "publico":2}
               },
               {
                 "texto": "Não podemos demitir nossa equipe!",
-                "efeitos": { "lucro": -1, "funcionarios": 1, "publico": 1 }
+                "efeitos": { "lucro": -3, "funcionarios": 4}
               }
             ]
           },
@@ -230,11 +230,11 @@
             "opcoes": [
               {
                 "texto": "Corrija imediatamente!",
-                "efeitos": { "lucro": -1, "pilares": 1 }
+                "efeitos": { "lucro": -2, "pilares": 4}
               },
               {
                 "texto": "Isso pode esperar.",
-                "efeitos": { "lucro": 1, "publico": -1 }
+                "efeitos": { "pilares": -1, "funcionarios": -3}
               }
             ]
           },
@@ -244,11 +244,11 @@
             "opcoes": [
               {
                 "texto": "Priorize os reparos!",
-                "efeitos": { "lucro": -1, "funcionarios": 1, "pilares": 1 }
+                "efeitos": { "lucro": -1, "funcionarios": 4, "pilares": 5 }
               },
               {
                 "texto": "Deixe rodar até onde der.",
-                "efeitos": { "lucro": 1, "funcionarios": -1}
+                "efeitos": { "funcionarios": -3, "pilares":-2}
               }
             ]
           },
@@ -258,11 +258,11 @@
             "opcoes": [
               {
                 "texto": "Invista em climatização.",
-                "efeitos": { "lucro": -1, "funcionarios": 1, "publico": 1 }
+                "efeitos": { "lucro": -6, "funcionarios": 7, "publico": 2 }
               },
               {
                 "texto": "Eles que aguentem.",
-                "efeitos": { "lucro": 1, "funcionarios": -1, "publico": -1 }
+                "efeitos": {"funcionarios": -3, "publico": -1 }
               }
             ]
           },
@@ -272,11 +272,11 @@
             "opcoes": [
               {
                 "texto": "Ótima ideia, faça isso.",
-                "efeitos": { "pilares": 1, "publico": 1, "lucro": -1 }
+                "efeitos": { "pilares": 3, "publico": 5 }
               },
               {
                 "texto": "Prefiro peças novas.",
-                "efeitos": { "lucro": 1, "pilares": -1, "publico": -1 }
+                "efeitos": { "lucro": -3, "pilares": 1, "publico": 2 }
               }
             ]
           },
@@ -287,11 +287,11 @@
             "opcoes": [
               {
                 "texto": "Apoio a mudança!",
-                "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
+                "efeitos": { "lucro": -4, "publico": 4, "pilares": 5 }
               },
               {
                 "texto": "Ficamos com o mais barato.",
-                "efeitos": { "lucro": 1, "publico": -1, "pilares": -1 }
+                "efeitos": { "lucro": 3, "publico": 3, "pilares": -2 }
               }
             ]
           },
@@ -301,11 +301,11 @@
             "opcoes": [
               {
                 "texto": "Implemente imediatamente!",
-                "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
+                "efeitos": { "lucro": -3, "publico": 4, "pilares": 5 }
               },
               {
                 "texto": "Muito trabalho, seguimos como está.",
-                "efeitos": { "lucro": 1, "publico": -1, "pilares": -1 }
+                "efeitos": { "lucro": 3, "funcionarios": 4, "pilares": -2 }
               }
             ]
           },
@@ -315,11 +315,11 @@
             "opcoes": [
               {
                 "texto": "Vamos apoiar!",
-                "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
+                "efeitos": { "lucro": -5, "publico": 7, "pilares": 5 }
               },
               {
                 "texto": "Não temos orçamento para isso.",
-                "efeitos": { "lucro": 1, "publico": -1 }
+                "efeitos": { "lucro": 3, "publico": -4 }
               }
             ]
           },
@@ -329,11 +329,11 @@
             "opcoes": [
               {
                 "texto": "Vale a pena a longo prazo!",
-                "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
+                "efeitos": { "lucro": -5, "publico": 3, "pilares": 7 }
               },
               {
                 "texto": "Custo alto demais, seguimos assim.",
-                "efeitos": { "lucro": 1, "publico": -1, "pilares": -1 }
+                "efeitos": { "lucro": 3, "publico": -1, "pilares": -3 }
               }
             ]
           },
@@ -343,11 +343,11 @@
             "opcoes": [
               {
                 "texto": "Ótima inovação, vamos usar!",
-                "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
+                "efeitos": { "lucro": -3, "publico": 3, "pilares": 5}
               },
               {
                 "texto": "Muito caro, ficamos com plástico.",
-                "efeitos": { "lucro": 1, "publico": -1, "pilares": -1 }
+                "efeitos": { "lucro": 3, "publico": -1, "pilares": -3}
               }
             ]
           },
@@ -357,11 +357,11 @@
             "opcoes": [
               {
                 "texto": "Apoio total, conhecimento é essencial.",
-                "efeitos": { "lucro": -1, "funcionarios": 1, "pilares": 1 }
+                "efeitos": { "lucro": -2, "funcionarios": 5, "pilares": 3 }
               },
               {
                 "texto": "Isso não é prioridade agora.",
-                "efeitos": { "lucro": 1, "funcionarios": -1, "pilares": -1 }
+                "efeitos": { "funcionarios": -4, "pilares": -1 }
               }
             ]
           },
@@ -371,11 +371,11 @@
             "opcoes": [
               {
                 "texto": "Invista nisso!",
-                "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
+                "efeitos": { "lucro": -3, "publico": 1, "pilares": 5 }
               },
               {
                 "texto": "Não precisamos mudar nada.",
-                "efeitos": { "lucro": 1, "publico": -1, "pilares": -1 }
+                "efeitos": { "publico": -1, "pilares": -4 }
               }
             ]
           },
@@ -385,11 +385,11 @@
             "opcoes": [
               {
                 "texto": "Faça a troca!",
-                "efeitos": { "lucro": -1, "funcionarios": 1, "publico": 1, "pilares": 1 }
+                "efeitos": { "lucro": -3, "funcionarios": 3, "publico": 3, "pilares": 3 }
               },
               {
                 "texto": "Não compensa o custo agora.",
-                "efeitos": { "lucro": 1, "publico": -1 }
+                "efeitos": { "lucro": 4 }
               }
             ]
           },
@@ -399,11 +399,11 @@
             "opcoes": [
               {
                 "texto": "Publicaremos relatórios!",
-                "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
+                "efeitos": { "lucro": -1, "publico": 5 }
               },
               {
                 "texto": "Não precisamos divulgar isso.",
-                "efeitos": { "lucro": 1, "publico": -1, "pilares": -1 }
+                "efeitos": { "lucro": 1, "publico": -3, "pilares": -2 }
               }
             ]
           },
@@ -413,11 +413,11 @@
             "opcoes": [
               {
                 "texto": "Vamos nos inscrever!",
-                "efeitos": { "lucro": -1, "publico": 1, "pilares": 1 }
+                "efeitos": { "lucro": -1, "publico": 5}
               },
               {
                 "texto": "Muito trabalho para pouca vantagem.",
-                "efeitos": { "lucro": 1, "publico": -1, "pilares": -1 }
+                "efeitos": { "lucro": 1, "publico": -4, "pilares": -3 }
               }
             ]
           },
@@ -427,11 +427,11 @@
         "opcoes": [
           {
             "texto": "Invista, precisamos de alcance!",
-            "efeitos": {"lucro": -10, "publico": 10, "pilares": 5}
+            "efeitos": {"lucro": -9, "publico": 8}
           },
           {
             "texto": "Muito caro, melhor estratégias mais baratas.",
-            "efeitos": {"lucro": 8, "publico": -6}
+            "efeitos": {"lucro": 3, "publico": -3}
           }
         ]
       },
@@ -441,11 +441,11 @@
         "opcoes": [
           {
             "texto": "Ótima ideia, vamos modernizar!",
-            "efeitos": {"lucro": -8, "publico": 7, "pilares": 6}
+            "efeitos": {"lucro": -5, "publico": 6, "pilares": 2}
           },
           {
             "texto": "O atual já funciona bem.",
-            "efeitos": {"lucro": 6, "publico": -4}
+            "efeitos": {"lucro": 3, "publico": -4}
           }
         ]
       },
@@ -455,11 +455,11 @@
         "opcoes": [
           {
             "texto": "Transparência total, vamos divulgar nossas ações.",
-            "efeitos": {"lucro": -10, "publico": 8, "pilares": 7}
+            "efeitos": {"lucro": -4, "publico": 6, "pilares": 2}
           },
           {
             "texto": "Ignora, isso passa.",
-            "efeitos": {"lucro": 7, "publico": -5}
+            "efeitos": {"lucro": 3, "publico": -7}
           }
         ]
       },
@@ -469,11 +469,11 @@
         "opcoes": [
           {
             "texto": "Apoio! Eles são o futuro da marca.",
-            "efeitos": {"lucro": -8, "publico": 9}
+            "efeitos": {"lucro": -3, "publico": 4}
           },
           {
             "texto": "Nosso público atual já é fiel.",
-            "efeitos": {"lucro": 7, "publico": -6}
+            "efeitos": {"lucro": 3, "publico": -5}
           }
         ]
       },
@@ -483,11 +483,11 @@
         "opcoes": [
           {
             "texto": "Vamos reforçar nosso diferencial!",
-            "efeitos": {"lucro": -9, "publico": 7, "pilares": 5}
+            "efeitos": {"lucro": -6, "publico": 5}
           },
           {
             "texto": "Sem mudanças, confiamos na qualidade.",
-            "efeitos": {"lucro": 6, "publico": -5}
+            "efeitos": {"lucro": 3, "pilares": 6}
           }
         ]
       },
@@ -497,11 +497,11 @@
         "opcoes": [
           {
             "texto": "Ótimo para vendas sazonais!",
-            "efeitos": {"lucro": -7, "publico": 8}
+            "efeitos": {"lucro": -6, "publico": 5}
           },
           {
             "texto": "Complicado e caro.",
-            "efeitos": {"lucro": 6, "publico": -5}
+            "efeitos": { "publico": -3}
           }
         ]
       },
@@ -511,11 +511,11 @@
         "opcoes": [
           {
             "texto": "Sim, redes sociais são essenciais.",
-            "efeitos": {"lucro": -8, "publico": 9}
+            "efeitos": {"lucro": -5, "publico": 6}
           },
           {
             "texto": "Não, é desperdício de dinheiro.",
-            "efeitos": {"lucro": 7, "publico": -6}
+            "efeitos": {"lucro": 3, "publico": -6}
           }
         ]
       },
@@ -525,11 +525,11 @@
         "opcoes": [
           {
             "texto": "Ótima estratégia, faça isso!",
-            "efeitos": {"lucro": -10, "publico": 10, "pilares": 6}
+            "efeitos": {"lucro": -7, "publico": 6, "pilares": 6}
           },
           {
             "texto": "Não vale a pena o esforço.",
-            "efeitos": {"lucro": 8, "publico": -5}
+            "efeitos": {"lucro": 3, "publico": -6}
           }
         ]
       },
@@ -539,11 +539,11 @@
         "opcoes": [
           {
             "texto": "Sim, isso nos coloca no radar do mundo!",
-            "efeitos": {"lucro": -12, "publico": 12, "pilares": 7}
+            "efeitos": {"lucro": -9, "publico": 5}
           },
           {
             "texto": "Muito caro para um retorno incerto.",
-            "efeitos": {"lucro": 9, "publico": -7}
+            "efeitos": {"lucro": 3, "publico": -5}
           }
         ]
       },
@@ -553,11 +553,11 @@
         "opcoes": [
           {
             "texto": "Vamos incluir mais representatividade!",
-            "efeitos": {"lucro": -8, "publico": 9, "pilares": 6}
+            "efeitos": {"lucro": -5, "publico": 7, "pilares": 6}
           },
           {
             "texto": "Nosso marketing já funciona bem assim.",
-            "efeitos": {"lucro": 6, "publico": -5}
+            "efeitos": {"lucro": 2, "publico": -8}
           }
         ]
       },
@@ -567,11 +567,11 @@
         "opcoes": [
           {
             "texto": "Sim! Usamos ingredientes de alta qualidade e seguimos inovando.",
-            "efeitos": {"lucro": 5, "pilares": 3}
+            "efeitos": {"lucro": -5, "pilares": 7}
           },
           {
             "texto": "Valorizamos nossos clientes e buscamos sempre o melhor custo-benefício.",
-            "efeitos": {"publico": 5, "lucro": -3}
+            "efeitos": {"publico": 6, "lucro": -3}
           }
         ]
       },
@@ -585,7 +585,7 @@
           },
           {
             "texto": "Estamos estudando o melhor momento para trazer esse lançamento.",
-            "efeitos": {"lucro": 4, "pilares": 2}
+            "efeitos": {"lucro": 4, "pilares": 4}
           }
         ]
       },
@@ -595,11 +595,11 @@
         "opcoes": [
           {
             "texto": "Sim! Nossa produção respeita o meio ambiente e as comunidades envolvidas.",
-            "efeitos": {"publico": 7, "pilares": 5}
+            "efeitos": {"publico": 4, "pilares": 3}
           },
           {
             "texto": "Estamos sempre buscando formas de tornar nossos produtos ainda mais sustentáveis.",
-            "efeitos": {"lucro": 3, "pilares": 4}
+            "efeitos": {"lucro": 3, "pilares": 3}
           }
         ]
       },
@@ -609,11 +609,11 @@
         "opcoes": [
           {
             "texto": "Já investimos nisso! Queremos reduzir nosso impacto ambiental.",
-            "efeitos": {"publico": 6, "pilares": 5, "lucro": -4}
+            "efeitos": {"publico": 6, "pilares": 5, "lucro": -6}
           },
           {
             "texto": "Trabalhamos para equilibrar inovação e sustentabilidade em nossos produtos.",
-            "efeitos": {"lucro": 4, "pilares": 3}
+            "efeitos": {"lucro": 4, "pilares": 5}
           }
         ]
       },
@@ -623,11 +623,11 @@
         "opcoes": [
           {
             "texto": "Isso mostra o quanto nossos produtos são amados! Vamos reforçar a produção.",
-            "efeitos": {"publico": 6, "lucro": -5, "funcionarios": 4}
+            "efeitos": {"publico": 6, "lucro": -5, "funcionarios": -6}
           },
           {
             "texto": "A alta demanda é um bom sinal! Vamos buscar otimizar nosso estoque.",
-            "efeitos": {"lucro": 5, "publico": 3}
+            "efeitos": {"lucro": -2, "publico": 3}
           }
         ]
       },
@@ -637,7 +637,7 @@
         "opcoes": [
           {
             "texto": "Sim! Estamos desenvolvendo novas opções deliciosas e equilibradas.",
-            "efeitos": {"publico": 7, "pilares": 4, "lucro": -4}
+            "efeitos": {"publico": 7, "pilares": 6, "lucro": -7}
           },
           {
             "texto": "Nosso foco é oferecer variedade, sempre mantendo o sabor que você ama!",
@@ -651,11 +651,11 @@
         "opcoes": [
           {
             "texto": "Estamos investindo para tornar sua experiência ainda melhor!",
-            "efeitos": {"publico": 6, "funcionarios": 4, "lucro": -4}
+            "efeitos": {"publico": 6, "funcionarios": -4, "lucro": -4}
           },
           {
             "texto": "Valorizamos cada cliente e trabalhamos para sempre oferecer um bom serviço.",
-            "efeitos": {"lucro": 5, "funcionarios": 3}
+            "efeitos": {"publico": 5, "funcionarios": 4}
           }
         ]
       },
@@ -665,11 +665,11 @@
         "opcoes": [
           {
             "texto": "Estamos testando novas fórmulas para atender a mais pessoas!",
-            "efeitos": {"publico": 7, "pilares": 4, "lucro": -4}
+            "efeitos": {"publico": 5, "pilares": 4,"funcionarios": -3, "lucro": -5}
           },
           {
             "texto": "Temos opções diversas, mas sempre ouvimos nossos clientes para evoluir!",
-            "efeitos": {"lucro": 5, "publico": 3}
+            "efeitos": {"lucro": 5, "publico": 5}
           }
         ]
       },
@@ -683,7 +683,7 @@
           },
           {
             "texto": "Trabalhamos para trazer promoções estratégicas e experiências únicas!",
-            "efeitos": {"lucro": 5, "publico": 3}
+            "efeitos": {"lucro": 2, "publico": 3, "funcionarios": -2}
           }
         ]
       },
@@ -693,11 +693,11 @@
         "opcoes": [
           {
             "texto": "Apoiar a comunidade faz parte do nosso compromisso!",
-            "efeitos": {"publico": 7, "pilares": 4, "lucro": -4}
+            "efeitos": {"publico": 7, "pilares": 6, "lucro": -4}
           },
           {
             "texto": "Estamos sempre buscando formas de causar um impacto positivo!",
-            "efeitos": {"lucro": 5, "pilares": 3}
+            "efeitos": {"lucro": 3, "pilares": 3}
           }
         ]
       }
