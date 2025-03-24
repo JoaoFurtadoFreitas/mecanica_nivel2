@@ -1,6 +1,8 @@
 class Jogo extends Phaser.Scene {
     constructor() {
         super({ key: "Jogo" });
+        this.cartasJogadas = 0;
+        this.anos = 0;
     }
 
     preload() {
@@ -17,6 +19,10 @@ class Jogo extends Phaser.Scene {
             publico: 40,
             pilares: 40,
         };
+        this.cartasJogadas = 0;
+
+        this.tempoInicial = this.time.now;
+        this.criarContadorAnos();
 
         const centerX = this.cameras.main.width / 2;
     const centerY = this.cameras.main.height / 2;
@@ -55,6 +61,7 @@ class Jogo extends Phaser.Scene {
         this.exibirCartaAtual();
 
     }
+
 
     criarBarrasStatus() {
         this.barras = {};
@@ -225,6 +232,7 @@ class Jogo extends Phaser.Scene {
                         this.containerCarta.destroy();
                         this.containerCarta = null;
                         this.indiceCartaAtual++;
+                        this.registrarCartaJogada();
                         this.exibirCartaAtual();
                     }
                 });
@@ -253,6 +261,7 @@ class Jogo extends Phaser.Scene {
 
     aplicarEfeitosCarta(efeitos) {
         const multiplicador = 3;
+        
     
         for (const [parametro, valor] of Object.entries(efeitos)) {
             if (this.parametros[parametro] !== undefined) {
@@ -347,10 +356,86 @@ class Jogo extends Phaser.Scene {
         this.popupGameOver = this.add.container(0, 0, [bloqueioFundo, fundoPopup, textoGameOver, textoMensagem, botaoRestart]).setDepth(999);
     }
     
+    criarContadorAnos() {
+        this.textoAnos = this.add.text(350, this.cameras.main.height - 40, `Ano: 0`, {
+            fontSize: '24px', fill: '#fff'
+        }).setDepth(10);
+        
+        this.time.addEvent({
+            delay: 30000,
+            callback: () => {
+                this.anos++;
+                this.textoAnos.setText(`Ano: ${this.anos}`);
+            },
+            loop: true
+        });
+    }
+
+    registrarCartaJogada() {
+        this.cartasJogadas++;
+        if (this.cartasJogadas >= 30) {
+            this.exibirTelaVitoria();
+        }
+    }
+
+    exibirTelaVitoria() {
+        let tempoTotal = (this.time.now - this.tempoInicial) / 1000;
+        let estrelas = this.calcularEstrelas(tempoTotal);
+        
+        const centerX = this.cameras.main.width / 2;
+        const centerY = this.cameras.main.height / 2;
     
+        // 🔹 Desativa a carta e impede que continue sendo arrastada
+        if (this.containerCarta) {
+            this.containerCarta.disableInteractive();
+            this.containerCarta.setActive(false);
+            this.tweens.killTweensOf(this.containerCarta);
+            this.input.off("drag");
+            this.input.off("dragstart");
+            this.input.off("dragend");
+            this.containerCarta.setDepth(-1);
+        }
     
+        // 🔹 Cria um fundo invisível para bloquear interações na tela
+        let bloqueioFundo = this.add.rectangle(centerX, centerY, 800, 600, 0x000000, 0)
+            .setInteractive()
+            .setDepth(998);
     
+        // 🔹 Cria o popup de vitória
+        let popup = this.add.rectangle(centerX, centerY, 500, 300, 0x000000, 0.8).setDepth(999);
+        let texto = this.add.text(centerX, centerY - 100, 'Vitória!', {
+            fontSize: '32px', fill: '#fff'
+        }).setOrigin(0.5).setDepth(999);
+        
+        let estrelasTexto = this.add.text(centerX, centerY - 50, `Estrelas: ${'⭐'.repeat(estrelas)}`, {
+            fontSize: '24px', fill: '#fff'
+        }).setOrigin(0.5).setDepth(999);
+        
+        let botaoReiniciar = this.add.text(centerX, centerY + 30, 'Tentar novamente', {
+            fontSize: '20px', fill: '#fff', backgroundColor: '#555'
+        }).setOrigin(0.5).setInteractive().setDepth(999);
+        botaoReiniciar.on('pointerdown', () => this.scene.restart());
+    
+        let botaoContinuar = this.add.text(centerX, centerY + 80, 'Continuar', {
+            fontSize: '20px', fill: '#fff', backgroundColor: '#555'
+        }).setOrigin(0.5).setInteractive().setDepth(999);
+        botaoContinuar.on('pointerdown', () => this.scene.start('TelaFinal'));
+    
+        // 🔹 Agrupa todos os elementos em um container
+        this.popupVitoria = this.add.container(0, 0, [bloqueioFundo, popup, texto, estrelasTexto, botaoReiniciar, botaoContinuar]).setDepth(999);
+    }
+    
+    calcularEstrelas(tempo) {
+        if (tempo < 300) return 3;
+        if (tempo < 420) return 2;
+        return 1;
+    }
 }
+
+
+    
+    
+
 
 
 const config = {
